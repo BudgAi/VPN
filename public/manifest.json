@@ -1,0 +1,26 @@
+
+{
+  "name": "Momma Bear VPN",
+  "short_name": "Momma Bear",
+  "description": "Free VPN for WhatsApp calls in the UAE",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#7c5cfc",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

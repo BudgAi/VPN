@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 50% 99%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 252 95% 67%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 252 100% 85%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 252 100% 92%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 252 95% 67%;
+
+    --radius: 1rem;
+  }
+ 
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+ 
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 252 95% 67%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 252 95% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Inter', sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.vpn-connect-button {
+  @apply relative overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+.vpn-connect-button::before {
+  @apply absolute inset-0 bg-gradient-to-r from-vpn-dark via-vpn to-vpn-dark bg-[length:200%] animate-pulse-slow;
+  content: '';
+  z-index: -1;
+}
+
+.vpn-connect-button.connected::before {
+  @apply from-vpn-connected via-vpn-connected to-vpn-connected;
+}
+
+.vpn-connect-button.disconnected::before {
+  @apply from-vpn-disconnected via-vpn-disconnected to-vpn-disconnected;
+}
+
+.bear-shadow {
+  filter: drop-shadow(0 8px 24px rgba(124, 92, 252, 0.25));
+}
